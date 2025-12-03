@@ -47,6 +47,8 @@ const findExpense = async () => {
     return await response.json();
 }
 
+// test
+
 // Função para converter valor
 function converterValorParaNumero(valorString) {
     const valorStr = String(valorString)
