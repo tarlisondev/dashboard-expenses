@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Financeiro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Adicionando Chart.js para os gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dashboard Financeiro</h1>
+        
+        <!-- Filtros -->
+        <div class="filtros">
+            <div class="filtro-group">
+                <label for="filtro-ano">Ano:</label>
+                <select id="filtro-ano">
+                    <option value="all">Todos os anos</option>
+                </select>
+            </div>
+
+            <div class="filtro-group">
+                <label for="filtro-mes">Mês:</label>
+                <select id="filtro-mes">
+                    <option value="all">Todos os meses</option>
+                </select>
+            </div>
+
+            <div class="filtro-group">
+                <label for="filtro-categoria">Categoria:</label>
+                <select id="filtro-categoria">
+                    <option value="all">Todas categorias</option>
+                </select>
+            </div>
+
+            <button id="btn-reset">Limpar Filtros</button>
+        </div>
+
+        <!-- Cards de Resultados -->
+        <div class="resultados-container">
+            <div class="card-resultado">
+                <h4>Soma do Ano</h4>
+                <div class="valor" id="soma-geral">R$ 0,00</div>
+                <p class="descricao" id="desc-geral">Selecione um ano</p>
+            </div>
+
+            <div class="card-resultado">
+                <h4>Soma do Mês</h4>
+                <div class="valor" id="soma-ano">R$ 0,00</div>
+                <p class="descricao" id="desc-ano">Selecione um mês</p>
+            </div>
+
+            <div class="card-resultado">
+                <h4>Soma por Categoria</h4>
+                <div class="valor" id="soma-mes">R$ 0,00</div>
+                <p class="descricao" id="desc-mes">Selecione uma categoria</p>
+            </div>
+        </div>
+
+        <!-- Gráficos -->
+        <div class="graficos-container">
+            <!-- Gráfico de Barras - Gastos Mensais -->
+            <div class="grafico-card">
+                <h3>Gastos Mensais</h3>
+                <div id="grafico-barras-container">
+                    <div class="grafico-placeholder" id="placeholder-barras">
+                        <!--<i>📊</i> -->
+                        <img width="60" src="./assets/icons/bar.png" alt="">
+                        <p>Selecione um ano para visualizar os gastos mensais</p>
+                    </div>
+                    <canvas id="grafico-barras"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico de Pizza - Distribuição por Categoria -->
+            <div class="grafico-card">
+                <h3>Distribuição por Categoria</h3>
+                <div id="grafico-pizza-container">
+                    <div class="grafico-placeholder" id="placeholder-pizza">
+                        <!--<i>🥧</i> -->
+                        <img width="60" src="./assets/icons/pizza.png" alt="">
+                        <p>Selecione um ano e mês para visualizar a distribuição por categoria</p>
+                    </div>
+                    <canvas id="grafico-pizza"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Código JavaScript -->
+    <script src="scripts/script.js"></script>
+</body>
+</html>
