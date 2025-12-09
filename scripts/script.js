@@ -40,7 +40,7 @@ const coresCategorias = [
 
 // Buscar dados da API
 const findExpense = async () => {
-    const response = await fetch('https://api-expenses-0md8.onrender.com', {
+    const response = await fetch('https://api-expenses-0md8.onrender.com', { //https://api-expenses-0md8.onrender.com
         method: 'get',
         headers: { 'Content-Type': 'application/json' }
     });
